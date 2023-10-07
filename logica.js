@@ -5,7 +5,7 @@ let tableR = document.createElement("table")
 
 inicializarTablaHTML()
 
-const row = {n:0, X:0, A:0, C:0, M:0}
+const row = {n:0, X:0, A:0, C:0, M:0, norm:0}
 
 function R(){
     // Valores de las variables obtenidas del HTML
@@ -21,6 +21,7 @@ function R(){
     row.A = A
     row.C = C
     row.M = M
+    row.norm = row.X/M
 
     for(let i = 1;  i < M; i++){
         toTable(row)
@@ -29,6 +30,7 @@ function R(){
         row.X = row.A % M
         row.C = ""
         row.M = ""
+        row.norm = row.X/M
     }
     if(periodoCompleto() == true){
         document.getElementById("info").classList.add("success")
@@ -64,6 +66,10 @@ function inicializarTablaHTML(){
     mHeader.innerHTML = "M"
     trHeader.append(mHeader)
 
+    let normHeader = document.createElement("th")
+    normHeader.innerHTML = "Normalizado"
+    trHeader.append(normHeader)
+
     tableR.append(trHeader)
 }
 
@@ -89,6 +95,10 @@ function toTable(row){
     let m = document.createElement("td")
     m.innerHTML = row.M
     fila.append(m)
+
+    let norm = document.createElement("td")
+    norm.innerHTML = row.norm
+    fila.append(norm)
     
     tableR.append(fila)
 }

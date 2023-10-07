@@ -1,0 +1,30 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+form, .resultado{
+    width: 100%;
+    margin: 10px auto;
+}
+form > fieldset{
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+}
+table, td, th{
+    border: 1px solid black;
+    text-align: center;
+}
+.info{
+    width: auto;
+    margin: auto;
+    text-align: center;
+}
+.info.warning{
+    background-color: lightcoral;
+}
+.info.success{
+    background-color: greenyellow;
+}
