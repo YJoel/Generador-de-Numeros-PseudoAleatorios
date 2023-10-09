@@ -4,11 +4,12 @@ let tableR = document.createElement("table")
     tableR.id = "randomNumbers"
     tableR.classList.add("table")
 
-inicializarTablaHTML()
-
 const row = {n:0, X:0, A:0, C:0, M:0, norm:0}
 
 function R(){
+    limpiar()
+    inicializarTablaHTML()
+
     // Valores de las variables obtenidas del HTML
     let values = new FormData(document.getElementById("form1"))
     let X = parseInt(values.get("input-X"))
@@ -35,11 +36,13 @@ function R(){
     }
     if(periodoCompleto() == true){
         document.getElementById("info").classList.add("success")
+        document.getElementById("info").classList.remove("warning")
         document.getElementById("info").innerHTML = "TIENE PERIODO COMPLETO"
         toHTML()
     }
     else{
         document.getElementById("info").classList.add("warning")
+        document.getElementById("info").classList.remove("success")
         document.getElementById("info").innerHTML = "NO TIENE PERIODO COMPLETO"
     }
 }
