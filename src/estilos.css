@@ -28,3 +28,7 @@ table, td, th{
 .info.success{
     background-color: greenyellow;
 }
+
+.container{
+    margin-top: 25px;
+}

@@ -2,6 +2,7 @@ let resultado = document.getElementById("resultado")
 
 let tableR = document.createElement("table")
     tableR.id = "randomNumbers"
+    tableR.classList.add("table")
 
 inicializarTablaHTML()
 
