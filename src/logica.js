@@ -1,10 +1,13 @@
+document.getElementById("prueba").addEventListener("click", R)
+
 let resultado = document.getElementById("resultado")
 
 let tableR = document.createElement("table")
     tableR.id = "randomNumbers"
     tableR.classList.add("table")
 
-const row = {n:0, X:0, A:0, C:0, M:0, norm:0}
+let row = {n:0, X:0, A:0, C:0, M:0, norm:0}
+let tableJS = []
 
 function R(){
     limpiar()
@@ -17,32 +20,35 @@ function R(){
     let C = parseInt(values.get("input-C"))
     let M = parseInt(values.get("input-M"))
 
-    // Paso de las variables al arreglo
-    row.n = 0
-    row.X = X
-    row.A = A
-    row.C = C
-    row.M = M
-    row.norm = row.X/M
-
-    for(let i = 1;  i < M; i++){
+    for(let i = 0;  i < M-1; i++){
+        if(i == 0){
+            row.n = 1
+            row.X = X
+            row.A = A
+            row.C = C
+            row.M = M
+            row.norm = row.X/M
+        }
+        else{
+            row.n = i+1
+            row.A = (row.X*A)+C
+            row.X = row.A % M
+            row.C = ""
+            row.M = ""
+            row.norm = row.X/M
+        }
+        tableJS.push({n:row.n, a:row.A, c:row.C, m:row.M, norm:row.norm})
         toTable(row)
-        row.n = i
-        row.A = (row.X*A)+C
-        row.X = row.A % M
-        row.C = ""
-        row.M = ""
-        row.norm = row.X/M
     }
     if(periodoCompleto() == true){
-        document.getElementById("info").classList.add("success")
         document.getElementById("info").classList.remove("warning")
+        document.getElementById("info").classList.add("success")
         document.getElementById("info").innerHTML = "TIENE PERIODO COMPLETO"
         toHTML()
     }
     else{
-        document.getElementById("info").classList.add("warning")
         document.getElementById("info").classList.remove("success")
+        document.getElementById("info").classList.add("warning")
         document.getElementById("info").innerHTML = "NO TIENE PERIODO COMPLETO"
     }
 }
@@ -109,11 +115,14 @@ function toTable(row){
 
 function toHTML(){
     resultado.append(tableR)
+    sessionStorage.setItem("randomNumbers", JSON.stringify(tableJS))
 }
 
 function limpiar(){
     resultado.innerHTML = ""
     tableR.innerHTML = ""
+    tableJS = []
+    sessionStorage.setItem("randomNumbers", "")
 }
 
 function periodoCompleto(){

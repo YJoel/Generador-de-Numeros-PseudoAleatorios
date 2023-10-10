@@ -4,17 +4,28 @@
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-form, .resultado{
+form{
     width: 100%;
-    margin: 10px auto;
 }
 form > fieldset{
     width: auto;
     display: flex;
     justify-content: space-around;
 }
+#resultado{
+    max-width: 100%;
+    height: fit-content;
+    max-height: 85vh;
+
+    border-radius: 10px;
+    border: 2px dashed darkgrey;
+
+    overflow-x: auto;
+    overflow-y: auto;
+
+    transition: 1s;
+}
 table, td, th{
-    border: 1px solid black;
     text-align: center;
 }
 .info{
@@ -30,5 +41,5 @@ table, td, th{
 }
 
 .container{
-    margin-top: 25px;
+    margin-top: 10px;
 }

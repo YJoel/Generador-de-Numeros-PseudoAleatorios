@@ -11,7 +11,9 @@
 <body>
     <div class="container">
         
-        <div class="info" id="info"></div>
+        <div class="info" id="info">
+            GENERADOR DE NÚMEROS ALEATORIOS
+        </div>
         <div class="row">
             <div class="col-6">
             <form id="form1" action="">
@@ -40,7 +42,7 @@
                         <div id="M-help" class="form-text">(Numero primo)</div>
                     </div>
 
-                    <input type="button" value="prueba" onclick="R()" class="btn btn-primary">
+                    <input type="button" value="prueba" id="prueba" class="btn btn-primary">
 
                 </form>
             </div>
@@ -51,19 +53,32 @@
                 </div>
             </div>  
         </div>
+
+        <div class="graphic" id="graphic">
+
+        </div>
+        <div class="hipotesis" id="hipotesis">
+            <div class="promedio">
+
+            </div>
+            <button id="promedio" class="btn btn-primary">
+                Prueba de Promedios
+            </button>
+
+            <!--
+            <div class="frecuencia">
+                
+            </div>
+            <button id="chiCuadrado">
+                Prueba de Frecuencias
+            </button>
+            -->
+        </div>
     </div>
     
-    
-
-    
-    
-    
-        
-   
-    
-
     <script src="logica.js"></script>
     <script src="cousinNumbers.js"></script>
+    <script src="ph/pruebadepromedios.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
