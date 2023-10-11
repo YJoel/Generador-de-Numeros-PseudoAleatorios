@@ -103,6 +103,41 @@
                         <div class="tab-pane fade distr uniforme" id="uniforme" role="tabpanel"
                             aria-labelledby="profile-tab">
                             <h4>Distribucion Uniforme</h4>
+                            <!--Cuerpo-->
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="">
+                                                <div class="input-group">
+                                                    <span class="input-group-text">Limites [x,y]</span>
+                                                    <input type="number" aria-label="First name" id="lim-x" name="lim-x"
+                                                        class="form-control">
+                                                    <input type="number" aria-label="Last name" id="lim-y" name="lim-y"
+                                                        class="form-control">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="card" id="card-distribuciones">
+                                        <div class="card-body">
+                                            <!--Table-->
+                                            <table id="tabla-uniforme">
+                                                <tr>
+                                                    <th>
+                                                        Variable Uniforme
+                                                    </th>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <div class="tab-pane fade distr exponencial" id="exponencial" role="tabpanel"
                             aria-labelledby="contact-tab">
@@ -113,23 +148,30 @@
                                         <div class="card-body">
                                             <form action="" name="distExp" id="distExp">
                                                 <div class="mb-3">
-                                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="mediaOLambda" id="mediaOLambda">
+                                                    <select class="form-select form-select-sm"
+                                                        aria-label=".form-select-sm example" name="mediaOLambda"
+                                                        id="mediaOLambda">
                                                         <option value="Media">Media</option>
                                                         <option value="Lambda">Lambda λ</option>
                                                     </select>
                                                 </div>
                                                 <div class="mb-3">
                                                     <div class="form-floating">
-                                                        <input type="text" class="form-control" id="valor" placeholder="" name="valor">
+                                                        <input type="text" class="form-control" id="valor"
+                                                            placeholder="" name="valor">
                                                         <label for="valor">Valor</label>
                                                     </div>
+                                                </div>
+                                                <div class="d-grid gap-2">
+                                                    <button class="btn btn-primary" type="submit">Generar
+                                                        varialbes</button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="card" id="card-exp">
+                                    <div class="card" id="card-distribuciones">
                                         <div class="card-body">
                                             <table id="tabla-exponencial">
                                                 <tr>
@@ -142,7 +184,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="tab-pane fade distr poisson" id="poisson" role="tabpanel"
                             aria-labelledby="distPoisson">
@@ -152,23 +193,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- 
-        <div class="distribuciones">
-            <div class="distr normal">
-
-            </div>
-            <div class="distr uniforme">
-
-            </div>
-            <div class="distr exponencial">
-
-            </div>
-            <div class="distr poisson">
-
-            </div>
-        </div>
-        -->
     </div>
 
     <script src="logica.js"></script>
