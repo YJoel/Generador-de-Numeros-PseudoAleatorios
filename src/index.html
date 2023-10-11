@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,70 +9,108 @@
 
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="container">
-        
-        <div class="info" id="info">
-            GENERADOR DE NÚMEROS ALEATORIOS
+
+        <div class="info" id="info"></div>
+
+        <div class="col bg-primary text-white rounded-pill mb-3" style="padding: 10px;">
+            <h2 class=" text-center" >GENERADOR DE NÚMEROS ALEATORIOS</h2>
         </div>
-        <div class="row">
+
+        <div class="row mb-3" style="height: 100vh;">
             <div class="col-6">
-            <form id="form1" action="">
-                    <div class="mb-3">
-                        <label for="input-X" class="form-label">Ingrese el valor de X </label>
-                        <input type="number" name="input-X" id="input-X" class="form-control">
-                        <div id="X-help" class="form-text">(Semilla)</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="input-A" class="form-label">Ingrese el valor de A </label>
-                        <input type="number" name="input-A" id="input-A" class="form-control">
-                        <div id="A-help" class="form-text">(Numero Impar No divisible entre 3 ni 5)</div>
-                    </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Formulario para generar numeros aleatorios</h5>
+                        <form id="form1" action="">
+                            <div class="mb-3 ">
+                                <label for="input-X" class="form-label">Ingrese el valor de X </label>
+                                <input type="number" name="input-X" id="input-X" class="form-control">
+                                <div id="X-help" class="form-text">(Semilla)</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-A" class="form-label">Ingrese el valor de A </label>
+                                <input type="number" name="input-A" id="input-A" class="form-control">
+                                <div id="A-help" class="form-text">(Numero Impar No divisible entre 3 ni 5)</div>
+                            </div>
 
-                    <div class="mb-3">
-                        <label for="input-C" class="form-label">Ingrese el valor de C  </label>
-                        <input type="number" name="input-C" id="input-C" class="form-control">
-                        <div id="C-help" class="form-text">(C % 8 = 5)</div>
+                            <div class="mb-3">
+                                <label for="input-C" class="form-label">Ingrese el valor de C </label>
+                                <input type="number" name="input-C" id="input-C" class="form-control">
+                                <div id="C-help" class="form-text">(C % 8 = 5)</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="input-M" class="form-label">Ingrese el valor de M</label>
+                                <select name="input-M" id="input-M" class="form-select">
+
+                                </select>
+                                <div id="M-help" class="form-text">(Numero primo)</div>
+                            </div>
+
+                            <input type="button" value="Generar numeros" id="prueba" class="btn btn-primary">
+
+                        </form>
                     </div>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="input-M" class="form-label">Ingrese el valor de M</label>
-                        <select name="input-M" id="input-M" class="form-select">
-                            
-                        </select>
-                        <div id="M-help" class="form-text">(Numero primo)</div>
-                    </div>
-
-                    <input type="button" value="prueba" id="prueba" class="btn btn-primary">
-
-                </form>
             </div>
 
             <div class="col-6">
                 <div id="resultado">
-    
+
                 </div>
-            </div>  
+            </div>
         </div>
 
-        <div class="hipotesis" id="hipotesis">
-            <div class="promedio">
-
+        <div class="row">
+            <div class="col bg-primary text-white rounded-pill" style="padding: 15px;">
+                <h3 class="text-center">Distribuciones</h3>
             </div>
-            <button id="promedio" class="btn btn-primary">
-                Prueba de Promedios
-            </button>
-
-            <!--
-            <div class="frecuencia">
-                
-            </div>
-            <button id="chiCuadrado">
-                Prueba de Frecuencias
-            </button>
-            -->
         </div>
 
+        <div class="row">
+            <div class="col">
+                <div class="distribuciones">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#normal"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">D. Normal</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#uniforme"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">D. Uniforme</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#exponencial"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">D. Exponencial</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#poisson"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">D. Poisson</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active distr normal" id="normal" role="tabpanel" aria-labelledby="home-tab">
+                            <h4>Distribucion Normal</h4>
+                        </div>
+                        <div class="tab-pane fade distr uniforme" id="uniforme" role="tabpanel" aria-labelledby="profile-tab">
+                            <h4>Distribucion Uniforme</h4>
+                        </div>
+                        <div class="tab-pane fade distr exponencial" id="exponencial" role="tabpanel" aria-labelledby="contact-tab">
+                            <h4>Distribucion Exponencial</h4>
+                        </div>
+                        <div class="tab-pane fade distr poisson" id="poisson" role="tabpanel" aria-labelledby="contact-tab">
+                            <h4>Distribucion Poisson</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!-- 
         <div class="distribuciones">
             <div class="distr normal">
 
@@ -80,17 +119,19 @@
 
             </div>
             <div class="distr exponencial">
-                
+
             </div>
             <div class="distr poisson">
 
             </div>
         </div>
+        -->
     </div>
-    
+
     <script src="logica.js"></script>
     <script src="cousinNumbers.js"></script>
     <script src="ph/pruebadepromedios.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
