@@ -16,7 +16,7 @@
         <div class="info" id="info"></div>
 
         <div class="col bg-primary text-white rounded-pill mb-3" style="padding: 10px;">
-            <h2 class=" text-center" >GENERADOR DE NÚMEROS ALEATORIOS</h2>
+            <h2 class=" text-center">GENERADOR DE NÚMEROS ALEATORIOS</h2>
         </div>
 
         <div class="row mb-3" style="height: 100vh;">
@@ -81,28 +81,68 @@
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#uniforme"
-                                type="button" role="tab" aria-controls="profile" aria-selected="false">D. Uniforme</button>
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">D.
+                                Uniforme</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#exponencial"
-                                type="button" role="tab" aria-controls="contact" aria-selected="false">D. Exponencial</button>
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">D.
+                                Exponencial</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#poisson"
-                                type="button" role="tab" aria-controls="contact" aria-selected="false">D. Poisson</button>
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">D.
+                                Poisson</button>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active distr normal" id="normal" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active distr normal" id="normal" role="tabpanel"
+                            aria-labelledby="home-tab">
                             <h4>Distribucion Normal</h4>
                         </div>
-                        <div class="tab-pane fade distr uniforme" id="uniforme" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade distr uniforme" id="uniforme" role="tabpanel"
+                            aria-labelledby="profile-tab">
                             <h4>Distribucion Uniforme</h4>
                         </div>
-                        <div class="tab-pane fade distr exponencial" id="exponencial" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade distr exponencial" id="exponencial" role="tabpanel"
+                            aria-labelledby="contact-tab">
                             <h4>Distribucion Exponencial</h4>
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="">
+                                                <div class="mb-3">
+                                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                                        <option value="1">Media</option>
+                                                        <option value="2">lambda λ</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="mb-3">
+                                                    <div class="form-floating">
+                                                        <input type="number" class="form-control"
+                                                            id="floatingPassword" placeholder="">
+                                                        <label for="floatingPassword">Valor</label>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card">
+                                        <div class="card-body">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="tab-pane fade distr poisson" id="poisson" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade distr poisson" id="poisson" role="tabpanel"
+                            aria-labelledby="contact-tab">
                             <h4>Distribucion Poisson</h4>
                         </div>
                     </div>
@@ -110,7 +150,7 @@
             </div>
         </div>
 
-       <!-- 
+        <!-- 
         <div class="distribuciones">
             <div class="distr normal">
 
