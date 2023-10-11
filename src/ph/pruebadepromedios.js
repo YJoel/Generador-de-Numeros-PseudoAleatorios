@@ -4,11 +4,9 @@ document.getElementById("promedio").addEventListener("click", ()=>{
     
     for(i in tableJS){
         acum += tableJS[i].norm
-        console.log(acum)
     }
 
     let promedio = acum/tableJS.length
     let zeta0 = Math.abs((promedio-0.5)*Math.sqrt(parseInt(tableJS.length)))/Math.sqrt(1/12)
-    console.log(tableJS)
-    document.querySelector(".promedio").innerHTML = `Z_0 = ${zeta0}`
+    document.querySelector(".promedio").innerHTML = `Z_0 = ${zeta0.toFixed(4)}`
 })

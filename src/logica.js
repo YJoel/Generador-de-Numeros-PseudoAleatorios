@@ -1,3 +1,4 @@
+sessionStorage.setItem("randomNumbers", null)
 document.getElementById("prueba").addEventListener("click", R)
 
 let resultado = document.getElementById("resultado")
@@ -27,7 +28,7 @@ function R(){
             row.A = A
             row.C = C
             row.M = M
-            row.norm = row.X/M
+            row.norm = (row.X/M).toFixed(4)
         }
         else{
             row.n = i+1
@@ -35,9 +36,9 @@ function R(){
             row.X = row.A % M
             row.C = ""
             row.M = ""
-            row.norm = row.X/M
+            row.norm = (row.X/M).toFixed(4)
         }
-        tableJS.push({n:row.n, a:row.A, c:row.C, m:row.M, norm:row.norm})
+        tableJS.push({n:row.n, x:row.X, a:row.A, c:row.C, m:row.M, norm:row.norm})
         toTable(row)
     }
     if(periodoCompleto() == true){
@@ -122,7 +123,7 @@ function limpiar(){
     resultado.innerHTML = ""
     tableR.innerHTML = ""
     tableJS = []
-    sessionStorage.setItem("randomNumbers", "")
+    sessionStorage.setItem("randomNumbers", null)
 }
 
 function periodoCompleto(){
