@@ -1,4 +1,4 @@
-sessionStorage.setItem("randomNumbers", null)
+sessionStorage.setItem("randomNumbers", "null")
 document.getElementById("prueba").addEventListener("click", R)
 
 let resultado = document.getElementById("resultado")
@@ -15,7 +15,7 @@ function R(){
     inicializarTablaHTML()
 
     // Valores de las variables obtenidas del HTML
-    let values = new FormData(document.getElementById("form1"))
+    let values = new FormData(document.getElementById("entradas"))
     let X = parseInt(values.get("input-X"))
     let A = parseInt(values.get("input-A"))
     let C = parseInt(values.get("input-C"))
@@ -28,7 +28,7 @@ function R(){
             row.A = A
             row.C = C
             row.M = M
-            row.norm = (row.X/M).toFixed(4)
+            row.norm = (row.X/M).toFixed(decimales)
         }
         else{
             row.n = i+1
@@ -36,7 +36,7 @@ function R(){
             row.X = row.A % M
             row.C = ""
             row.M = ""
-            row.norm = (row.X/M).toFixed(4)
+            row.norm = (row.X/M).toFixed(decimales)
         }
         tableJS.push({n:row.n, x:row.X, a:row.A, c:row.C, m:row.M, norm:row.norm})
         toTable(row)
@@ -123,7 +123,7 @@ function limpiar(){
     resultado.innerHTML = ""
     tableR.innerHTML = ""
     tableJS = []
-    sessionStorage.setItem("randomNumbers", null)
+    sessionStorage.setItem("randomNumbers", "null")
 }
 
 function periodoCompleto(){
@@ -137,3 +137,5 @@ function periodoCompleto(){
 
     return true
 }
+
+const decimales = 5

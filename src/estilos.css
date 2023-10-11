@@ -25,6 +25,21 @@ form > fieldset{
 
     transition: 1s;
 }
+
+#card-exp{
+    max-width: 100%;
+    height: fit-content;
+    max-height: 60vh;
+
+    border-radius: 10px;
+    border: 2px dashed darkgrey;
+
+    overflow-x: auto;
+    overflow-y: auto;
+
+    transition: 1s;
+}
+
 table, td, th{
     text-align: center;
 }

@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title text-center">Formulario para generar numeros aleatorios</h5>
-                        <form id="form1" action="">
+                        <form id="entradas" action="">
                             <div class="mb-3 ">
                                 <label for="input-X" class="form-label">Ingrese el valor de X </label>
                                 <input type="number" name="input-X" id="input-X" class="form-control">
@@ -111,30 +111,33 @@
                                 <div class="col-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="">
+                                            <form action="" name="distExp" id="distExp">
                                                 <div class="mb-3">
-                                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                                        <option value="1">Media</option>
-                                                        <option value="2">lambda λ</option>
+                                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="mediaOLambda" id="mediaOLambda">
+                                                        <option value="Media">Media</option>
+                                                        <option value="Lambda">Lambda λ</option>
                                                     </select>
                                                 </div>
-                                                
                                                 <div class="mb-3">
                                                     <div class="form-floating">
-                                                        <input type="number" class="form-control"
-                                                            id="floatingPassword" placeholder="">
-                                                        <label for="floatingPassword">Valor</label>
+                                                        <input type="text" class="form-control" id="valor" placeholder="" name="valor">
+                                                        <label for="valor">Valor</label>
                                                     </div>
                                                 </div>
-
                                             </form>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <div class="card">
+                                    <div class="card" id="card-exp">
                                         <div class="card-body">
-
+                                            <table id="tabla-exponencial">
+                                                <tr>
+                                                    <th>
+                                                        Variable Exponencial
+                                                    </th>
+                                                </tr>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +145,7 @@
 
                         </div>
                         <div class="tab-pane fade distr poisson" id="poisson" role="tabpanel"
-                            aria-labelledby="contact-tab">
+                            aria-labelledby="distPoisson">
                             <h4>Distribucion Poisson</h4>
                         </div>
                     </div>
@@ -171,6 +174,10 @@
     <script src="logica.js"></script>
     <script src="cousinNumbers.js"></script>
     <script src="ph/pruebadepromedios.js"></script>
+    <script src="distribuciones/exponencial.js"></script>
+    <script src="distribuciones/normal.js"></script>
+    <script src="distribuciones/uniforme.js"></script>
+    <script src="distribuciones/poisson.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 
