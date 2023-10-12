@@ -42,14 +42,14 @@ function R(){
         toTable(row)
     }
     if(periodoCompleto() == true){
-        document.getElementById("info").classList.remove("warning")
-        document.getElementById("info").classList.add("success")
+        document.getElementById("info").classList.remove("text-bg-danger")
+        document.getElementById("info").classList.add("text-bg-success")
         document.getElementById("info").innerHTML = "TIENE PERIODO COMPLETO"
         toHTML()
     }
     else{
-        document.getElementById("info").classList.remove("success")
-        document.getElementById("info").classList.add("warning")
+        document.getElementById("info").classList.remove("text-bg-success")
+        document.getElementById("info").classList.add("text-bg-danger")
         document.getElementById("info").innerHTML = "NO TIENE PERIODO COMPLETO"
     }
 }
