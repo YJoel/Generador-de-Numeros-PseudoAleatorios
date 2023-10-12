@@ -58,3 +58,7 @@ table, td, th{
 .container{
     margin-top: 10px;
 }
+
+.distr{
+    min-height: 35vh;
+}
