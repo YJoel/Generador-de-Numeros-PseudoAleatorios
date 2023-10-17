@@ -41,6 +41,7 @@ document.getElementById("distExp").addEventListener("submit", (e)=>{
     }
 })
 
+// getR() devuelve el arreglo de la columna con los valores normalizados
 function getR(arreglo){
     let R = []
     for(i in arreglo){
